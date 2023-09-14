@@ -4,7 +4,7 @@ practice01.onchange = function() {
     let x = Number( practice01.value );
     let sum = 0;
 
-    if( typeof x != 'number' || isNaN( x ) ) { alert(x); return; }
+    if( typeof x !== 'number' || isNaN( x ) ) { alert(x); return; }
 
     for( let y = 0; y < x; y++ ) {
         sum += Number( prompt( "Enter a number: " ) );
@@ -35,7 +35,7 @@ let practice04 = document.getElementById("4");
 document.getElementById("factor").onchange = function() {
     let x = Number( document.getElementById("factor").value );
     let sum;
-    if( typeof x != 'number' || isNaN( x ) ) { return; }
+    if( typeof x !== 'number' || isNaN( x ) ) { return; }
     sum = x;
     for( y = sum-1; y > 0; y-- ) sum *= y;
     practice04.innerHTML += `<p>The factor of those numbers is: ${sum}`;
@@ -70,7 +70,7 @@ document.getElementById("7increm").onchange = function() {
     let collection = new Array();
     let max = Number( document.getElementById("7increm").value );
 
-    if( typeof max != 'number' || isNaN(max) ) return;
+    if( typeof max !== 'number' || isNaN(max) ) return;
     for (let x = 1; x <= max; x++) collection.push(x);
     practice07.innerHTML += "<br>" + collection.join(", ");
 }
@@ -80,7 +80,7 @@ document.getElementById("8expon").onchange = function() {
     let collection = new Array();
     let max = Number( document.getElementById("8expon").value );
 
-    if( typeof max != 'number' || isNaN(max) ) return;
+    if( typeof max !== 'number' || isNaN(max) ) return;
     for (let x = 1; x <= max; x *= 2) collection.push(x);
     practice08.innerHTML += "<br>" + collection.join(", ");
 }
@@ -90,7 +90,7 @@ document.getElementById("9prime").onchange = function() {
     let collection = new Array();
     let max = Number( document.getElementById("9prime").value );
 
-    if( typeof max != 'number' || isNaN(max) || max < 1 ) return;
+    if( typeof max !== 'number' || isNaN(max) || max < 1 ) return;
 
     collection.push(1);
     if( max >= 2 ) collection.push(2);
@@ -110,7 +110,7 @@ function createTable() {
     let max = Number( document.getElementById("10high").value );
     let results = "";
 
-    if( typeof max != 'number' || typeof min != 'number' ||
+    if( typeof max !== 'number' || typeof min !== 'number' ||
         isNaN( min ) || isNaN( max ) || max <= min || min < 1 ) return;
 
     practice10.innerHTML += "<p>";
@@ -130,7 +130,7 @@ document.getElementById("forLoop").onchange = function () {
     let loop = Number(document.getElementById("forLoop").value);
     let msg = document.getElementById("yourThirdMessage");
 
-    if (typeof loop != 'number' || isNaN(loop)) return;
+    if (typeof loop !== 'number' || isNaN(loop)) return;
     for (let x = 0; x < loop; x++) {
         var num = Number(prompt("Enter a number:"));
         numbers.push(num);
@@ -144,7 +144,7 @@ function denominator() {
     let one = Number(document.getElementById("12one").value);
     let two = Number(document.getElementById("12two").value);
     let denom = 1;
-    if (typeof one != 'number' || typeof two != 'number' ||
+    if (typeof one !== 'number' || typeof two !== 'number' ||
         isNaN(one) || isNaN(two) || two < 1 || one < 1) return;
 
     for( let x = 0; x < ( one < two ? one : two ); x++ )
@@ -162,7 +162,7 @@ function denominator() {
     let one = Number(document.getElementById("13one").value);
     let two = Number(document.getElementById("13two").value);
 
-    if (typeof one != 'number' || typeof two != 'number' ||
+    if (typeof one !== 'number' || typeof two !== 'number' ||
         isNaN(one) || isNaN(two) || two < 1 || one < 1) return;
 
     let mult = one * two;
