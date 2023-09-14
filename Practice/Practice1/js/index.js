@@ -15,7 +15,7 @@ document.getElementById("yourAge").onchange = function () {
 document.getElementById("myButton").onclick = function() {
     let costs = [[2,4],[4,8],[6,12],[8,16],[10,18],[12,20]];
     let textResults = "";
-    for( x = 0; x < costs.length; x++ ) {
+    for( let x = 0; x < costs.length; x++ ) {
         textResults += "The cost for " + costs[x][0] + " is " + costs[x][1] + " Euros ("+
             (Math.round(costs[x][1]/costs[x][0]*100)/100).toFixed(2)+" Euro per).<br>";
     }
@@ -57,13 +57,14 @@ document.getElementById("currentYear").onchange = calcYear;
 document.getElementById("forLoop").onchange = function () {
     let total = 0;
     let numbers = new Array();
-    let loop = Number(document.getElementById("forLoop").value)
+    let loop = Number(document.getElementById("forLoop").value);
+    let msg = document.getElementById("yourThirdMessage");
 
     if (typeof loop != 'number' || isNaN(loop)) return;
-    for (x = 0; x < loop; x++) {
+    for (let x = 0; x < loop; x++) {
         var num = Number(prompt("Enter a number:"));
         numbers.push(num);
         total += num;
     }
-    document.getElementById("yourThirdMessage").innerHTML = "<h2>Total of " + numbers.join(" + ") + " = " + total + "</h2>";
+    msg.innerHTML = "<h2>Total of " + numbers.join(" + ") + " = " + total + "</h2>";
 }
