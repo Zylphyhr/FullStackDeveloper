@@ -191,5 +191,3 @@ document.getElementById("13two").onchange = denominator;
     document.write( mults.join( "<br>") );
     document.write( "<p>");
     document.write( mults.sort().join("<br>") )
-
-mults.
