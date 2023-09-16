@@ -181,3 +181,15 @@ function denominator() {
 
 document.getElementById("13one").onchange = denominator;
 document.getElementById("13two").onchange = denominator;
+
+
+    let numbers = [2, 5, 4, 1, 3];
+    let mults = numbers.map(x => x*2 );
+    document.write( mults.join("<br>") );
+    document.write( "<p>");
+    mults = numbers.filter( x => x < 4 );
+    document.write( mults.join( "<br>") );
+    document.write( "<p>");
+    document.write( mults.sort().join("<br>") )
+
+mults.
