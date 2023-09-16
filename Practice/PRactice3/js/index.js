@@ -25,12 +25,12 @@ arrayList.map( x => x.push( x[0] + x[1] ) );
 document.getElementById("01").innerHTML = arrayList.map( x => `${x[0]} + ${x[1]} = ${x[2]}<br>`).join("");
 
 const myGGNumber = Math.floor(Math.random()*100)+1;
-let GGLow = 0; let GGHigh = 101; let guesses = 1;
+let GGLow = 0; let GGHigh = 101; let guesses = 0;
+
 document.getElementById("guessingGame").onclick = function() {
     let guess = 0;
     const message = document.getElementById("02");
-    while( true ) {
-        guess = Number( prompt(`Guess #${guesses} (${GGLow+1} to ${GGHigh-1})`) );
+    while( guess = Number( prompt(`Guess #${guesses+1} (${GGLow+1} to ${GGHigh-1})`) ) ) {
         guesses++;
         console.log( guess );
         if (isNaN(guess) || typeof guess != 'number') {
@@ -38,6 +38,7 @@ document.getElementById("guessingGame").onclick = function() {
             message.innerHTML += "<br>Guess wasted on a num number.  Try again.<br>";
             continue;
         }
+        if( GGLow === GGHigh ) { console.log( `ERROR: ${myGGNumber}`); break; }
         if (guess <= GGLow || guess >= GGHigh) {
             console.log( "Outside of High/Low" );
             message.innerHTML += `Guess outside of parameters of ${GGLow} and ${GGHigh}`;
