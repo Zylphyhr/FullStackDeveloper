@@ -70,3 +70,30 @@ document.getElementById("guessingGame").onclick = function() {
         message.appendChild(box);
     }
 }
+
+let lowCase = [];
+let uppCase = [];
+for( let x = "a".charCodeAt(0); x <= "z".charCodeAt(0); x++ ) {
+    lowCase.push( String.fromCharCode(x) );
+    uppCase.push( String.fromCharCode(x-32) );
+}
+document.getElementById("03").style.fontFamily = "Courier, monospace";
+document.getElementById("03").innerHTML += `LowerCase: ${lowCase.join(", ")}<br>UpperCase: ${uppCase.join(", ")}.<br>`;
+
+let rndmNumsOne = [];
+let rndmNumsTwo = [];
+
+for( let x = 0; x < 10; x++ ) {
+    rndmNumsOne.push( Math.floor(Math.random()*10) );
+    rndmNumsTwo.push( Math.floor(Math.random()*10) );
+}
+let evenNums = rndmNumsOne.concat(rndmNumsTwo).filter( x => 0 === x%2 );
+let oddNums = rndmNumsOne.concat(rndmNumsTwo).filter( x => 1 === x%2 );
+let sum = 0;
+
+oddNums.forEach( x => sum += x );
+
+document.getElementById("04").innerHTML += `Even Numbers: ${evenNums.join( ", " )}<br>Sum of Odd Numbers (${oddNums.join(", ")}): ${sum}.<br>`;
+
+var listOfNames = ["David", "Natanael", "Ellen", "Emeline", "Olivier", "Anik", "Benjamin", "Marceline", "Robbe", "Ruben", "Wendy", "Pravid", "Tom" ];
+document.getElementById("05").innerHTML = listOfNames.sort().join( "<br>");
