@@ -93,7 +93,9 @@ let sum = 0;
 
 oddNums.forEach( x => sum += x );
 
-document.getElementById("04").innerHTML += `Even Numbers: ${evenNums.join( ", " )}<br>Sum of Odd Numbers (${oddNums.join(", ")}): ${sum}.<br>`;
+document.getElementById("04").innerHTML += `Even Numbers: ${evenNums.join( ", " )}
+    <br>Sum of Odd Numbers (${oddNums.join(", ")}): ${sum}.<br>`;
 
-var listOfNames = ["David", "Natanael", "Ellen", "Emeline", "Olivier", "Anik", "Benjamin", "Marceline", "Robbe", "Ruben", "Wendy", "Pravid", "Tom" ];
+var listOfNames = ["David", "Natanael", "Ellen", "Emeline", "Olivier", "Anik",
+    "Benjamin", "Marceline", "Robbe", "Ruben", "Wendy", "Pravid", "Tom" ];
 document.getElementById("05").innerHTML = listOfNames.sort().join( "<br>");
