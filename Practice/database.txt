@@ -1,0 +1,13 @@
+TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+CREATE TABLE example1 (ex_id INT, val VARCHAR)
+
+CREATE TABLE example2 (example_id INT, ex_id INT, value VARCHAR)
+  FOREIGN KEY (ex_id) REFERENCES example1(ex_id)
+  ON UPDATE RESTRICT ON DELETE RESTRICT
+
+SELECT * FROM `actor` WHERE last_name LIKE '%es%' ORDER BY first_name, last_name ASC;
+
+SELECT DISTINCT
+
+SELECT * FROM actor WHERE last_name IN ("zellweger","Guiness","williams") AND last_name LIKE "%ll%"

@@ -73,9 +73,9 @@ document.getElementById("guessingGame").onclick = function() {
 
 let lowCase = [];
 let uppCase = [];
-for( let x = "a".charCodeAt(0); x <= "z".charCodeAt(0); x++ ) {
+for( let x = "A".charCodeAt(0); x <= "Z".charCodeAt(0); x++ ) {
     lowCase.push( String.fromCharCode(x) );
-    uppCase.push( String.fromCharCode(x-32) );
+    uppCase.push( String.fromCharCode(x+32) );
 }
 document.getElementById("03").style.fontFamily = "Courier, monospace";
 document.getElementById("03").innerHTML += `LowerCase: ${lowCase.join(", ")}<br>UpperCase: ${uppCase.join(", ")}.<br>`;
@@ -98,4 +98,20 @@ document.getElementById("04").innerHTML += `Even Numbers: ${evenNums.join( ", " 
 
 var listOfNames = ["David", "Natanael", "Ellen", "Emeline", "Olivier", "Anik",
     "Benjamin", "Marceline", "Robbe", "Ruben", "Wendy", "Pravid", "Tom" ];
-document.getElementById("05").innerHTML = listOfNames.sort().join( "<br>");
+document.getElementById("05").innerHTML += listOfNames.sort().join( "<br>");
+
+function armstrong( x ) {
+    let word = x.toString().split('');
+    let width = word.length;
+    let sum = 0;
+
+    for( let y = 0; y < width; y++ ) {
+        sum += Math.pow(Number( word[y] ),width);
+    }
+    if( sum === x ) return true; return false;
+}
+
+let armstrongNumbers = [];
+for( let x = 0; x < 1000000; x++ )
+    if( armstrong(x) ) armstrongNumbers.push(x);
+document.getElementById("06").innerHTML += armstrongNumbers.join(", ") + "<br>";
